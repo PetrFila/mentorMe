@@ -11,21 +11,7 @@
 # Shrine.plugin :rack_file # for non-Rails apps
 
 
-#CLOUDINARY setup
 
-# require "cloudinary"
-# require "shrine/storage/cloudinary"
-#
-# Cloudinary.config(
-#   cloud_name: "profile-avatar",
-#   api_key:    "514873724659967",
-#   api_secret: "xbRguaO6FbUnwfcvKyUfQ4rNQxk"
-# )
-#
-# Shrine.storages = {
-#   cache: Shrine::Storage::Cloudinary.new(prefix: "cache"), # for direct uploads
-#   store: Shrine::Storage::Cloudinary.new(prefix: "store"),
-# }
 
 
 #AWS S3 setup
