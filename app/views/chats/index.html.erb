@@ -1,0 +1,29 @@
+<%= render "profiles/navbar"%>
+
+<div class="row">
+  <div class="col-12 col-sm-1 col-md-1 col-lg-3"></div>
+    <div class="card border-light col-12 col-sm-10 col-md-10 col-lg-6">
+
+      <h2>EXISTING chat with another users</h2>
+<div class="list-group">
+  <% if @other_existing_chats_subscription_profiles %>
+    <% @other_existing_chats_subscription_profiles.each do |other_profile| %>
+      <% if other_profile != current_user.profile %>
+        <% other_profile.chats.each do |other_chat| %>
+          <li class= "list-group-item list-group-item-action">
+            <%= link_to(profile_chat_path(other_profile.id, other_chat.id), method: :get) do %>
+              Join existing chat with <%= other_profile.first_name %>  <%= other_profile.last_name %>
+            <% end %>
+          </li>
+        <% end %>
+
+     <% end %>
+   <% end %>
+  <% end %>
+
+</div>
+        <%= link_to "Back to Profile", profile_path(current_user.profile), class: "btn btn-outline-info"  %>
+      </div>
+    </div>
+  <div class="col-12 col-sm-1 col-md-1 col-lg-3"></div>
+</div>

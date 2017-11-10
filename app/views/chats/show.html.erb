@@ -1,0 +1,33 @@
+
+<%= render "profiles/navbar"%>
+
+<div class="row">
+  <div class="col-12 col-sm-1 col-md-1 col-lg-3"></div>
+    <div class="card border-light col-12 col-sm-10 col-md-10 col-lg-6">
+
+  <h2 class= "text-center">Chat with <%= @other_profile.full_name %></h2><br>
+
+  <h4 class="text-center">Chat Messages</h4>
+  <% if @chat.messages.any? %>
+    <div id="messages">
+      <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
+    </div>
+  <% else %>
+    <div id="messages">No message history
+    </div>
+  <% end %>
+
+      <br>
+      <h4>Write Message</h4>
+      <%= render partial: 'messages/message_form', locals: {message: @message, chat: @chat, other_profile: @other_profile}%>
+
+      <script>
+        createMessageChannel();
+        // app/assets/javascripts/channels/messages.js
+        messageForm();
+        // app/assets/javascripts/messages_form.js
+      </script>
+    </div>
+
+  <div class="col-12 col-sm-1 col-md-1 col-lg-3"></div>
+</div>

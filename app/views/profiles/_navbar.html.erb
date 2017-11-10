@@ -1,0 +1,29 @@
+
+  <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h3>Mentor<span class="font-weight-bold">Me</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to 'Home', profiles_path, class: "nav-link" %>
+
+
+
+        <% if user_signed_in? %>
+          <%= link_to 'Edit user', edit_user_registration_path, class: "nav-link" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link"  %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link"  %>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link"  %>
+        <% end %>
+      </div>
+    </div>
+    <% if current_user.profile.full_name %>
+      Logged in as <strong><%= current_user.profile.full_name %></strong>.
+      <% else %>
+      Logged in as  <strong><%= current_user.email %></strong>.
+    <% end %>
+  </nav>
+</div>

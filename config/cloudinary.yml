@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: profile-avatar
+  api_key: '514873724659967'
+  api_secret: xbRguaO6FbUnwfcvKyUfQ4rNQxk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: profile-avatar
+  api_key: '514873724659967'
+  api_secret: xbRguaO6FbUnwfcvKyUfQ4rNQxk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: profile-avatar
+  api_key: '514873724659967'
+  api_secret: xbRguaO6FbUnwfcvKyUfQ4rNQxk
+  enhance_image_tag: true
+  static_image_support: false
